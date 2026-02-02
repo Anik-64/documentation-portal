@@ -213,9 +213,9 @@ function renderSection(section, isFirstTopLevel = false) {
     });
 
     div.appendChild(a);
-    const hasToken = !!localStorage.getItem('accessToken');
+    // const hasToken = !!localStorage.getItem('accessToken');
 
-    if (hasToken) {
+    // if (hasToken) {
         const editBtn = document.createElement('button');
         editBtn.type = 'button';
         editBtn.title = 'Edit this section';
@@ -233,7 +233,7 @@ function renderSection(section, isFirstTopLevel = false) {
             openEditModal(section);
         });
         div.insertBefore(editBtn, a.nextSibling); 
-    }
+    // }
 
     const copyBtn = document.createElement('button');
     copyBtn.type = 'button';
@@ -344,11 +344,11 @@ async function loadContent(secno) {
             editBtn.className = 'bg-yellow-500 text-white px-4 py-2 rounded mt-4';
             editBtn.textContent = 'Edit Content';
             editBtn.addEventListener('click', () => showEditor(html));
-            const hasToken = !!localStorage.getItem('accessToken');
-            if (hasToken) {
-                contentArea.appendChild(editBtn);
-            }
-            // contentArea.appendChild(editBtn);
+            // const hasToken = !!localStorage.getItem('accessToken');
+            // if (hasToken) {
+            //     contentArea.appendChild(editBtn);
+            // }
+            contentArea.appendChild(editBtn);
         } else {
             showEditor('');
         }
