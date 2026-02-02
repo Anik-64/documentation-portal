@@ -68,7 +68,8 @@ app.get('/docs', (req, res) => {
         keywords: 'documentation, health',
         content: '',
         section: null,
-        layout: false,
+        layout: 'layout',
+        customJS: '/js/doc.js',
     });
 });
 
@@ -92,12 +93,13 @@ app.get('/docs/:slug', async (req, res) => {
         }
 
         res.render('pages/docs', {
-            layout: false,
+            layout: 'layout',
             title: `${section.name} - Documentation`,
             description: `${section.metadescription || 'Documentation and help articles'}`,
             keywords: `${section.metakeywords || 'documentation, health'}`,
             content: contentHtml,
-            section: section
+            section: section,
+            customJS: '/js/doc.js',
         });
     } catch (err) {
         console.error(err);
