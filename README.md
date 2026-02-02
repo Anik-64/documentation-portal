@@ -56,4 +56,4 @@ docker run -d \
   --env-file /path/to/your/.env \
   beekeeper27/docportal:v1
 ```
-Replace /path/to/your/.env with the actual path to your .env file on the host machine. The `.env.example` file in the repo shows all required keys (without values) so you can easily create your own `.env`.
+Replace `/path/to/your/.env` with the actual path to your .env file on the host machine. The `.env.example` file in the repo shows all required keys (without values) so you can easily create your own `.env`.
