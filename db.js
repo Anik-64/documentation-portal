@@ -22,9 +22,12 @@ const config = isLive ?
         database: process.env.PGDATABASE,
         password: process.env.PGPASSWORD,
         port: Number(process.env.PGPORT || 5432),
+        // ssl: {
+        //     require: true, 
+        // }
         ssl: {
-            require: true,
-        }
+            rejectUnauthorized: false, 
+        },
     };
 
 const pool = new pg.Pool(config);
