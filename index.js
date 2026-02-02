@@ -57,6 +57,7 @@ app.use(expressLayouts);
 app.use((req, res, next) => {
     res.locals.appName = 'Documentation Portal';
     res.locals.message = 'Welcome to Documentation Portal!';
+    res.locals.author = 'Anik Majumder';
     next();
 });
 
