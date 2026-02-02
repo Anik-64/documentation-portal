@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+    <% if (typeof customCSS !== 'undefined') { %>
+        <link rel="stylesheet" href="<%= customCSS %>">
+    <% } %>
+</head>
+<body class="bg-white">
+    <%- body %>
+
+    <% if (typeof customJS !== 'undefined') { %>
+        <script src="<%= customJS %>"></script>
+    <% } %>
+</body>
+</html>
