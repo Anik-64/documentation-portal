@@ -61,6 +61,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/docs');
+});
+
 app.get('/docs', (req, res) => {
     res.render('pages/docs', {
         title: 'Documentation Portal',
