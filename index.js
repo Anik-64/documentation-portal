@@ -51,7 +51,7 @@ app.set('trust proxy', 2);
 // Templet Engine Setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
 
 app.use((req, res, next) => {
@@ -60,7 +60,6 @@ app.use((req, res, next) => {
     res.locals.author = 'Anik Majumder';
     next();
 });
-
 
 app.get('/docs', (req, res) => {
     res.render('pages/docs', {
@@ -114,6 +113,12 @@ app.use(
 );
 
 // Start the server
-app.listen(process.env.PORT || 8080, () => {
-    console.log(`Server running on port ${process.env.PORT || 8080}`);
-});
+// app.listen(process.env.PORT || 8080, () => {
+//     console.log(`Server running on port ${process.env.PORT || 8080}`);
+// });
+
+if (require.main === module) {
+    app.listen(process.env.PORT || 3000, () => console.log(`Running locally on port ${process.env.PORT || 3000}`));
+}
+
+module.exports = app;
